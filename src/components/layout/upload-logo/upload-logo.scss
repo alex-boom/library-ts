@@ -1,0 +1,117 @@
+@import 'scss/vendors/include-media';
+
+
+.media-logo-holder {
+
+    .ant-upload-wrapper {
+        all: unset;
+        display: block !important;
+
+        .ant-upload-list.ant-upload-list-picture-card {
+            width: 100%;
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+
+            @include media('>=desktop') {
+                grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+            }
+
+            &:before,
+            &:after {
+                display: none;
+            }
+        }
+
+        .ant-upload-list-item-container {
+            +.ant-upload.ant-upload-select {
+                display: none !important;
+            }
+        }
+
+        .ant-upload-list-item-container,
+        .ant-upload.ant-upload-select {
+            all: unset !important;
+            position: relative !important;
+            width: 100% !important;
+            height: 100% !important;
+            padding-bottom: 30% !important;
+            border-radius: 4px !important;
+
+            img {
+                position: absolute !important;
+                top: 0;
+                left: 0;
+                width: auto !important;
+                // height: 100%;
+                // object-fit: contain !important;
+            }
+        }
+
+        .ant-upload-list-item.ant-upload-list-item-done {
+            overflow: hidden;
+            border: none !important;
+            padding: 0 !important;
+
+            &:before {
+                width: 100% !important;
+                height: 100% !important;
+            }
+
+            .ant-upload-list-item-actions {
+                display: flex;
+                justify-content: center;
+
+                >* {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 36px !important;
+                    height: 36px !important;
+                    background: rgba(white, 0.7);
+                    border-radius: 50%;
+                    margin-right: 8px;
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover {
+                        background: white;
+                    }
+
+                    * {
+                        font-size: 20px;
+                        color: black;
+                    }
+                }
+            }
+
+        }
+
+        .ant-upload.ant-upload-select {
+            cursor: pointer !important;
+            color: var(--primary-color) !important;
+            border: 2px dashed var(--primary-color) !important;
+            min-height: 123px !important;
+            text-transform: uppercase !important;
+            font-weight: 600 !important;
+            padding-bottom: 0 !important;
+
+            @include media('>=desktop') {
+                min-height: 193px !important;
+            }
+
+
+            &.ant-upload-disabled {
+                opacity: 0.3 !important;
+
+                .ant-upload-disabled {
+                    color: var(--primary-color);
+                }
+            }
+
+            .site-badge {
+                font-size: 20px;
+            }
+        }
+    }
+
+}

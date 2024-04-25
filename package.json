@@ -1,0 +1,68 @@
+{
+  "name": "mystand-project-library",
+  "version": "0.2.0",
+  "private": true,
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=20.9.0"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.8.7",
+    "antd": "^5.11.1",
+    "apollo-upload-client": "^18.0.1",
+    "array-move": "^4.0.0",
+    "dayjs": "^1.11.10",
+    "env-cmd": "^10.1.0",
+    "eslint": "8.22.0",
+    "graphql": "^16.8.1",
+    "node-sass": "^9.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.18.0",
+    "react-scripts": "^5.0.1",
+    "react-sortable-hoc": "^2.0.0",
+    "react-waypoint": "^10.3.0",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "start": "env-cmd -f .env.production react-scripts start",
+    "start:dev": "env-cmd -f .env.development react-scripts start",
+    "build": "env-cmd -f .env.production react-scripts build",
+    "build:dev": "env-cmd -f .env.development react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "overrides": {
+    "react-scripts": {
+      "typescript": "^5"
+    }
+  },
+  "devDependencies": {
+    "@types/apollo-upload-client": "^17.0.5",
+    "@types/jest": "^29.5.8",
+    "@types/node": "^20.9.0",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "eslint-config-react-app": "^7.0.1"
+  }
+}

@@ -1,0 +1,80 @@
+@import '/src/scss/vendors/include-media';
+
+.multi-select {
+
+  .search-input {
+    margin-bottom: 16px;
+  }
+}
+
+.holder-group-select {
+  position: relative;
+  height: 267px;
+  margin-bottom: 12px;
+
+  .loader-item {
+    display: flex;
+    justify-content: center;
+  }
+
+  .line-top,
+  .line-bottom {
+    position: absolute;
+    left: -23px;
+    right: -23px;
+    height: 1px;
+    margin: 0;
+    background: rgba(34, 43, 51, 0.15);
+  }
+
+  .line-top {
+    top: 0;
+
+    .searh-border-bottom-none & {
+      display: none;
+    }
+  }
+
+  .line-bottom {
+    bottom: 0;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #D8D8D8;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: darken(#D8D8D8, 10%);
+  }
+}
+
+.multi-drawer {
+
+  .holder-group-select {
+    height: 65vh !important;
+
+    @include media('>=phone') {
+      height: 75vh !important;
+    }
+
+    .inner {
+      height: 67vh !important;
+
+      @include media('>=phone') {
+        height: 77vh !important;
+      }
+    }
+  }
+}

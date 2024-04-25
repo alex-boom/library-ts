@@ -1,0 +1,23 @@
+@import 'scss/vendors/include-media';
+@import 'scss/base/variables';
+
+
+.ant-breadcrumb {
+
+  &.main-breadcrumb {
+    text-transform: capitalize;
+    margin-right: 10px !important;
+    font-size: 12px;
+
+    ol {
+      align-items: center;
+    }
+
+    li:last-child a {
+      color: var(--breadcrumb_lastItemColor);
+      font-weight: 600;
+      cursor: default;
+      height: auto;
+    }
+  }
+}

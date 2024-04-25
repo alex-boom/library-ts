@@ -1,0 +1,26 @@
+/// colors black & white
+/// @example scss - Usage
+///   .my-class {
+///     background: black(0.15);
+///     color: white(0.9);
+///   }
+@function black($opacity){
+    @return rgba(black, $opacity);
+}
+
+@function white($opacity){
+    @return rgba(white, $opacity);
+}
+
+@function hexToRGB($hex) {
+    @return red($hex), green($hex), blue($hex);
+}
+
+
+  @function hexToStr($hex, $opacity: null) {
+    @if $opacity == null {
+      @return $hex;
+    } @else {
+      @return rgba($hex, $opacity);
+    }
+  }

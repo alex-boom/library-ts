@@ -1,0 +1,13 @@
+.group-checkbox {
+  position: relative;
+  display: block !important;
+  font-weight: normal;
+  overflow-y: auto;
+  padding: 15px 0 9px !important;
+  margin-bottom: 10px !important;
+
+  .ant-checkbox-group-item {
+    display: flex;
+    margin-bottom: 10px;
+  }
+}

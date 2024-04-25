@@ -1,0 +1,263 @@
+@import 'scss/base/variables';
+@import 'scss/vendors/include-media';
+@import 'scss/base/mixins';
+@import 'scss/base/helpers';
+
+
+.page {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+
+  @include media('>=desktop') {
+    margin: 0 0 0 2px;
+  }
+
+  &.page-stand,
+  &.page-equipment {
+    &.sticky {
+      .page-content {
+        margin-top: 120px;
+      }
+    }
+
+  }
+
+  &.sticky {
+    .page-header-top-bar {
+      position: fixed;
+      top: 50px;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      background-color: var(--charlestonGray);
+      padding: 15px;
+
+      @include media('>=1200px') {
+        left: 54px;
+        right: 17px;
+      }
+
+      h1,
+      h2 {
+        font-size: 18px;
+        margin-bottom: 0;
+      }
+    }
+
+    .page-content {
+      margin-top: 55px;
+    }
+
+    .lang-flags {
+
+      &.form {
+        position: fixed;
+        top: 100px;
+        left: 0;
+        right: 0;
+        background-color: var(--page_colorBgLayoutInner);
+        border-bottom: 2px solid var(--charlestonGray);
+        padding: 8px 15px;
+        z-index: 1;
+
+        @include media('>=1200px') {
+          left: 54px;
+          right: 17px;
+        }
+      }
+    }
+  }
+
+  .page-header {
+    padding: 0 10px;
+
+    @include media('>=500px') {
+      margin-bottom: 10px;
+    }
+
+    @include media('>=desktop') {
+      padding: 0 14px;
+    }
+
+    .right-bar {
+      display: inline-flex;
+      flex-wrap: wrap;
+      margin-left: auto;
+    }
+  }
+
+  .page-header-top-bar {
+    margin: 0 0 5px;
+    transition: all .3s ease;
+
+    @include media('>=desktop') {
+      display: flex;
+      align-items: flex-start;
+      margin: 0 0 10px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      transition: all .3s ease;
+
+      .ant-skeleton-paragraph {
+        display: none;
+      }
+    }
+
+    >* {
+      margin-bottom: 13px;
+    }
+
+    .right-bar {
+      min-width: 100%;
+      padding-top: 5px;
+
+      @include media('<desktop') {
+        margin: 0 -7px 6px;
+      }
+
+      @include media('>=desktop') {
+        min-width: 35%;
+        justify-content: end;
+        margin-bottom: 6px;
+      }
+
+      >* {
+        margin: 0 7px 7px;
+
+        @include media('<tablet') {
+          width: calc(50% - 14px);
+        }
+      }
+    }
+
+    .file-upload {
+      .ant-upload.ant-upload-drag {
+        display: block;
+      }
+
+      .ant-btn {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+
+  .page-navbar {
+    display: flex;
+    flex-wrap: wrap;
+
+    .page-links {
+      display: inline-flex;
+      flex-wrap: wrap;
+      text-transform: capitalize;
+      font-size: 14px;
+      font-weight: 600;
+
+      >li {
+        margin-right: 18px;
+        margin-bottom: 5px;
+
+        @include media('>=tablet') {
+          font-size: 16px;
+          margin-right: 25px;
+          margin-bottom: 0;
+        }
+
+        @include media('>=desktop') {
+          margin-right: 35px;
+        }
+
+
+        a {
+          @extend %underline;
+          color: var(--stormGray);
+          padding: 0;
+          transition: color .3s ease;
+
+          @include media('>=500px') {
+            padding: 0 0 6px;
+          }
+
+
+          &.active {
+            color: var(--primary-color) !important;
+
+            &:before {
+              left: 0;
+              right: 0;
+              visibility: visible !important;
+              opacity: 1 !important;
+
+            }
+          }
+
+          &:hover {
+            color: var(--white);
+          }
+
+          &:before {
+            height: 2px;
+            bottom: 0;
+            z-index: 1;
+            opacity: 0 !important;
+            visibility: hidden !important;
+
+            @include media('>=500px') {
+              bottom: -3px;
+            }
+
+            @include media('>=tablet') {
+              height: 3px;
+              border-top-left-radius: 3px;
+              border-top-right-radius: 3px;
+            }
+          }
+        }
+      }
+    }
+
+    .right-bar {
+
+      >* {
+        margin: 0 7px 0;
+      }
+    }
+  }
+
+  .page-content {
+    position: relative;
+    background-color: var(--page_colorBgLayoutInner);
+    height: 100%;
+    padding: 15px;
+
+    @include media('>=desktop') {
+      padding: 20px 16px 80px;
+    }
+
+    &.tabs-indent {
+      margin-top: 38px;
+    }
+
+    >.row-grid {
+      @include media('<tablet') {
+        grid-gap: 10px;
+      }
+    }
+
+    .col-left {
+      @include media('<desktop') {
+        order: 2;
+      }
+    }
+
+    .col-right {
+      @include media('<desktop') {
+        order: 1;
+      }
+    }
+  }
+}

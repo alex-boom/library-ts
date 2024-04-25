@@ -1,0 +1,20 @@
+@import 'scss/base/variables';
+@import 'scss/vendors/include-media';
+
+
+.top-bar {
+  display: flex;
+  align-items: flex-start;
+  // justify-content: space-between;
+  padding: 14px 12px 0 0;
+  margin-bottom: 16px;
+
+  @include media('>=tablet') {
+    padding: 14px 14px 0 0;
+    margin-bottom: 20px;
+  }
+
+  @include media('>=1200px') {
+    padding: 14px 14px 0;
+  }
+}

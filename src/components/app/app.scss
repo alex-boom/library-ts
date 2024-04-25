@@ -1,0 +1,74 @@
+@import 'scss/base/variables';
+@import 'scss/vendors/include-media';
+
+
+
+
+
+.sider {
+    position: relative;
+    padding-bottom: 60px;
+    background-color: var(--sider_colorBgLayoutSider) !important;
+    border: 1px solid var(--sider_colorBorder);
+
+    @include media('>=1200px') {
+        border: none;
+    }
+
+    &.ant-layout-sider-collapsed {
+        border: none;
+    }
+}
+
+.sider-logout {
+    position: absolute;
+    left: 50%;
+    bottom: -30px;
+    transform: translateX(-50%);
+    font-size: 40px;
+    color: var(--white);
+    display: flex;
+    cursor: pointer;
+    margin-top: auto;
+    padding: 0 10px;
+    overflow: auto;
+
+    @include media('>=1200px') {
+        font-size: 30px;
+    }
+
+    &:hover {
+        color: var(--primary-color);
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+
+        transition: color 0.3s;
+    }
+
+    .logout-icon {
+        transition: none;
+    }
+}
+
+.content-holder {
+    overflow: auto;
+}
+
+
+
+.public-app {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-color: var(--primary-color);
+    background-image: url(../../assets/library_back_image.png);
+}

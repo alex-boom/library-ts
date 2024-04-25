@@ -1,0 +1,71 @@
+// list reset
+%list-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+%list-dot {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--text-color);
+}
+
+// transition
+%transition {
+    transition: all var(--animation-speed) ease-in-out;
+}
+
+%button-reset {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+}
+
+/// * Helper class to truncate and add ellipsis to a string too long for it to fit
+/// * on a single line.
+/// * 1. Prevent content from wrapping, forcing it on a single line.
+/// * 2. Add ellipsis at the end of the line.
+
+.ellipsis {
+    max-width: 90%;
+    white-space: nowrap;
+    /* 1 */
+    text-overflow: ellipsis;
+    /* 2 */
+    overflow: hidden;
+}
+
+%underline {
+    position: relative;
+
+    .active &,
+    &:hover {
+
+        &:before {
+            left: 0;
+            right: 0;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    &:before {
+        @include animate(visibility left right);
+        content: "";
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        bottom: 0;
+        background-color: currentColor;
+        height: 1px;
+        visibility: hidden;
+        opacity: 0;
+    }
+}

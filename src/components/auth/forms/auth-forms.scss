@@ -1,0 +1,32 @@
+@import 'scss/vendors/include-media';
+@import 'scss/base/variables';
+
+
+.sign-in-form {
+    width: 100%;
+    max-width: 380px;
+    padding: 8px 40px 30px !important;
+    background-color: white;
+    border-radius: 4px;
+    text-align: center;
+
+    .ant-btn {
+        min-width: 101px;
+        margin-top: 12px;
+    }
+
+    .anticon {
+        color: var(--input_colorTextPlaceholder) !important;
+    }
+
+
+    .holder-date-logo {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 0;
+
+        .logo-text {
+            font-size: 18px;
+        }
+    }
+}

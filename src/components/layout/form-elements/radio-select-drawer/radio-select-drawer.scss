@@ -1,0 +1,13 @@
+.group-radio {
+  display: flex !important;
+  flex-direction: column;
+  position: relative;
+  font-weight: normal;
+  overflow-y: auto;
+  padding: 15px 0 9px !important;
+  margin-bottom: 10px !important;
+
+  .ant-radio-wrapper {
+    margin-bottom: 10px;
+  }
+}
